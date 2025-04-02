@@ -27,6 +27,8 @@ public class Character_LocomotionState : CharacterState
     private void Anime()
     {
         character.animator.SetFloat("horizontalSpeed", Mathf.Abs(horizontalInput));
+        character.animator.SetFloat("verticalSpeed", character.rgb2D.linearVelocityY);
+        character.animator.SetBool("isGrounded", character.IsGrounded());
     }
     public override void InputRequest(CharacterInputController.InputType inputType, CharacterInputController.ClickType clickType)
     {

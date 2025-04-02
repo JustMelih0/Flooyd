@@ -7,11 +7,13 @@ public class Character_DashState : CharacterState
     [SerializeField] private float dashForce = 10f;
     [SerializeField] private float dashCooldown = 2f;
     [SerializeField] private bool canDash = true;
+    [SerializeField] private GameObject dashObject;
 
     public override void Enter()
     {
         machine.canTransitionState = false;
         canDash = false;
+        Instantiate(dashObject, character.transform.position, Quaternion.Euler(0, character.facingRight == 1 ? 0 : 180 , 0));
         character.rgb2D.AddForce(character.facingRight * dashForce * Vector2.right, ForceMode2D.Impulse);
         character.animator.SetTrigger("dashState");
         character.StartCoroutine(EndDash());
@@ -37,7 +39,6 @@ public class Character_DashState : CharacterState
         yield return new WaitForSeconds(0.2f);
         machine.canTransitionState = true;
         machine.ChangeState(machine.character_LocomotionState);
-        Debug.Log("End Dash");
         character.StartCoroutine(DashCooldown());
     }
 

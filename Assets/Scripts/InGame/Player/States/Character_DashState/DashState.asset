@@ -15,3 +15,4 @@ MonoBehaviour:
   dashForce: 7
   dashCooldown: 2
   canDash: 1
+  dashObject: {fileID: 2575937397080775754, guid: 52bd81689fb81164c99159d78e0124fc, type: 3}
