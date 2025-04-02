@@ -6,6 +6,7 @@ using UnityEngine;
 public class Character_LocomotionState : CharacterState
 {
     [SerializeField]private float moveSpeed = 1f;
+    [SerializeField]private float jumpForce = 5f;
     private float horizontalInput;
     public override void Enter()
     {
@@ -26,6 +27,14 @@ public class Character_LocomotionState : CharacterState
     private void Anime()
     {
         character.animator.SetFloat("horizontalSpeed", Mathf.Abs(horizontalInput));
+    }
+    public override void InputRequest(CharacterInputController.InputType inputType, CharacterInputController.ClickType clickType)
+    {
+        base.InputRequest(inputType, clickType);
+        if (inputType == CharacterInputController.InputType.JumpInput && character.IsGrounded())
+        {
+            character.rgb2D.linearVelocityY = jumpForce;
+        }
     }
 
     public override void HandlePhysics()
