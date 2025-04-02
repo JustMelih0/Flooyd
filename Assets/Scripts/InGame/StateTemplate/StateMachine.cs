@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class StateMachine : MonoBehaviour
 {
-  
-    [HideInInspector]public State currentState;
+
+    public State currentState;
     public bool canTransitionState = true;
 
 
@@ -18,7 +18,7 @@ public abstract class StateMachine : MonoBehaviour
     }
     void Start()
     {
-     
+
     }
     private void Update()
     {

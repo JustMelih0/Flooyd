@@ -5,19 +5,22 @@ using UnityEngine;
 public class CharacterStateMachine : StateMachine
 {
 
-    [HideInInspector]public Character character;
+    [HideInInspector] public Character character;
 
 
 
     public Character_LocomotionState character_LocomotionStateTemplate;
+    public Character_DashState character_DashStateTemplate;
 
-    [HideInInspector]
-    public Character_LocomotionState character_LocomotionState;
+    [HideInInspector] public Character_LocomotionState character_LocomotionState;
+    [HideInInspector] public Character_DashState character_DashState;
+
 
     private void Awake()
     {
         character = GetComponent<Character>();
         InitFromSO(character_LocomotionStateTemplate, out character_LocomotionState);
+        InitFromSO(character_DashStateTemplate, out character_DashState);
     }
     private void InitFromSO<T>(CharacterState stateTemplate, out T state) where T : CharacterState
     {

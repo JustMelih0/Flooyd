@@ -8,21 +8,23 @@ using UnityEngine.InputSystem;
 public class CharacterInputController : MonoBehaviour
 {
 
-    private CharacterStateMachine character;
+    private CharacterStateMachine machine;
 
     private PlayerInput playerInput;
-    private void Awake() 
+    private void Awake()
     {
-        character = GetComponent<CharacterStateMachine>();
+        machine = GetComponent<CharacterStateMachine>();
         playerInput = GetComponent<PlayerInput>();
     }
-    private void OnEnable() {
+    private void OnEnable()
+    {
         //GameManager.OnGamePaused += CloseInputController;
         //GameManager.OnGameResumed += OpenInputController;
 
     }
-    private void OnDisable() {
-       // GameManager.OnGamePaused -= CloseInputController;
+    private void OnDisable()
+    {
+        // GameManager.OnGamePaused -= CloseInputController;
         //GameManager.OnGameResumed -= OpenInputController;
 
     }
@@ -41,53 +43,53 @@ public class CharacterInputController : MonoBehaviour
     }
     public void AttackInput(InputAction.CallbackContext context)
     {
-       if (context.started)
-       {
+        if (context.started)
+        {
             //character.attackState.InputRequest(InputType.AttackInput, ClickType.started);
-       }
-       else if (context.canceled)
-       {
+        }
+        else if (context.canceled)
+        {
             //character.attackState.InputRequest(InputType.AttackInput, ClickType.canceled);
-       }
+        }
 
     }
     public void DashInput(InputAction.CallbackContext context)
-    { 
-       if (context.started)
-       {
-            //character.dashState.InputRequest(InputType.DashInput, ClickType.started);
-       }
+    {
+        if (context.started)
+        {
+            machine.character_DashState.InputRequest(InputType.DashInput, ClickType.started);
+        }
     }
     public void BlockInput(InputAction.CallbackContext context)
-    { 
-       if (context.started)
-       {
+    {
+        if (context.started)
+        {
             //character.blockState.InputRequest(InputType.BlockInput, ClickType.started);
-       }
+        }
     }
     public void JumpInput(InputAction.CallbackContext context)
     {
-       if (context.started)
-       {
+        if (context.started)
+        {
             //character.locomotionState.InputRequest(InputType.JumpInput, ClickType.started);
-       }
+        }
     }
     public void PotDrinkInput(InputAction.CallbackContext context)
     {
-       if (context.started)
-       {
+        if (context.started)
+        {
             //character.potDrinkState.InputRequest(InputType.PotDrinkInput, ClickType.started);
-       }
+        }
     }
     public void InteractInput(InputAction.CallbackContext context)
     {
-       if (context.started)
-       {
+        if (context.started)
+        {
             //characterFeatures.InteractRequest();
-       }
+        }
     }
 
-   
+
 
 
     [System.Serializable]
