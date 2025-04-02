@@ -46,4 +46,5 @@ public class Character_LocomotionState : CharacterState
         base.Initialize(machine, character);
         
     }
+    
 }

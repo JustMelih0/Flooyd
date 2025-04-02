@@ -32,12 +32,17 @@ public class Character : Mob
         facingRight *= -1;
         transform.localRotation = Quaternion.Euler(0, facingRight == 1 ? 0 : 180, 0);
     }
-    public bool IsGrounded()
+    public Collider2D IsGrounded()
     {
         return CheckCircleArea(footPoint.transform.position, footRadius, footLayer);
     }
     public Collider2D CheckCircleArea(Vector2 checkPoint, float radius, LayerMask checkLayer)
     {
         return Physics2D.OverlapCircle(checkPoint, radius, checkLayer);
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(footPoint.transform.position, footRadius);
     }
 }

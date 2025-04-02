@@ -16,4 +16,5 @@ public abstract class CharacterState : State
     {
 
     }
-}
+    
+    }

@@ -71,7 +71,7 @@ public class CharacterInputController : MonoBehaviour
     {
         if (context.started)
         {
-            //character.locomotionState.InputRequest(InputType.JumpInput, ClickType.started);
+            machine.character_LocomotionState.InputRequest(InputType.JumpInput, ClickType.started);
         }
     }
     public void PotDrinkInput(InputAction.CallbackContext context)

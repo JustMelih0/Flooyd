@@ -44,5 +44,9 @@ public abstract class StateMachine : MonoBehaviour
         currentState = newAnyState;
         currentState.Enter();
     }
+    void OnDrawGizmos()
+    {
+        currentState?.Gizmos();
+    }
 
 }

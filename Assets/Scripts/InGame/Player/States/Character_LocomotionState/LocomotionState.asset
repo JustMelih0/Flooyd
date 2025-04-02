@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: LocomotionState
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  jumpForce: 7
