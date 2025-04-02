@@ -13,7 +13,7 @@ public class Character_DashState : CharacterState
         machine.canTransitionState = false;
         canDash = false;
         character.rgb2D.AddForce(character.facingRight * dashForce * Vector2.right, ForceMode2D.Impulse);
-        //character.animator.SetTrigger("Dash");
+        character.animator.SetTrigger("dashState");
         character.StartCoroutine(EndDash());
     }
 

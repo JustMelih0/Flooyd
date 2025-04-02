@@ -5,12 +5,12 @@ using UnityEngine;
 public class Character : Mob
 {
     [Header("For Landing")]
-    [SerializeField]private GameObject footPoint;
-    [SerializeField]private LayerMask footLayer;
-    [SerializeField]private float footRadius = 0.2f;
+    [SerializeField] private GameObject footPoint;
+    [SerializeField] private LayerMask footLayer;
+    [SerializeField] private float footRadius = 0.2f;
 
-    public Rigidbody2D rgb2D{get; private set;}
-    public Animator animator{get; private set;}
+    public Rigidbody2D rgb2D { get; private set; }
+    public Animator animator { get; private set; }
 
     public float facingRight = 1;
 
