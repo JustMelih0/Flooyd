@@ -8,6 +8,6 @@ public abstract class State : ScriptableObject
     public abstract void Exit();
     public abstract void Execute();
     public abstract void HandlePhysics();
-    public virtual void Gizmos(){}
+    public virtual void GizmosDraw(){}
 
 }

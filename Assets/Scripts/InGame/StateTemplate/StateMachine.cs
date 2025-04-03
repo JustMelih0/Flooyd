@@ -3,23 +3,18 @@ using UnityEngine;
 public abstract class StateMachine : MonoBehaviour
 {
 
-    public State currentState;
+    [Header("Dont Assign Value")]public State currentState;
     public bool canTransitionState = true;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
 
     }
-    private void InitFromSO<T>(State stateTemplate, out T state) where T : State
-    {
-        state = (T)Instantiate(stateTemplate);
-        state.Initialize(this, null);
+    protected virtual void Start() {
+        
     }
-    void Start()
-    {
 
-    }
     private void Update()
     {
         currentState?.Execute();
@@ -46,7 +41,7 @@ public abstract class StateMachine : MonoBehaviour
     }
     void OnDrawGizmos()
     {
-        currentState?.Gizmos();
+        currentState?.GizmosDraw();
     }
 
 }

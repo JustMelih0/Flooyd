@@ -8,7 +8,7 @@ public class CharacterStateMachine : StateMachine
     [HideInInspector] public Character character;
 
 
-
+    [Header("State Templates")]
     public Character_LocomotionState character_LocomotionStateTemplate;
     public Character_DashState character_DashStateTemplate;
 
@@ -16,20 +16,22 @@ public class CharacterStateMachine : StateMachine
     [HideInInspector] public Character_DashState character_DashState;
 
 
-    private void Awake()
+    protected override void Awake()
     {
         character = GetComponent<Character>();
         InitFromSO(character_LocomotionStateTemplate, out character_LocomotionState);
         InitFromSO(character_DashStateTemplate, out character_DashState);
     }
-    private void InitFromSO<T>(CharacterState stateTemplate, out T state) where T : CharacterState
+    protected void InitFromSO<T>(CharacterState stateTemplate, out T state) where T : CharacterState
     {
         state = (T)Instantiate(stateTemplate);
         state.Initialize(this, character);
     }
-    void Start()
+
+    protected override void Start()
     {
-        currentState = character_LocomotionState;
+        base.Start();
+        ChangeState(character_LocomotionState);
     }
 
 

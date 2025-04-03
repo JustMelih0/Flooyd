@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dyoattack_0: -2217720857557074649
+      dyoattack_1: -6283859472298081622
+      dyoattack_2: 5202763987318665447
+      dyoattack_3: -359327647686944543
+      dyoattack_4: -6012618688614461168
+      dyoattack_5: -7529825353417395142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
