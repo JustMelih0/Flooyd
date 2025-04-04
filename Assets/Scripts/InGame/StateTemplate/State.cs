@@ -9,5 +9,9 @@ public abstract class State : ScriptableObject
     public abstract void Execute();
     public abstract void HandlePhysics();
     public virtual void GizmosDraw(){}
+    public virtual void OnAnimationStarted(){}
+    public virtual void OnAnimation(){}
+    public virtual void OnAnimationEnded(){}
+
 
 }

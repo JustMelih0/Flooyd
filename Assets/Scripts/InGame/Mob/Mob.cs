@@ -19,6 +19,13 @@ public abstract class Mob : MonoBehaviour
             MobFlip();
         }
     }
+    public void FaceToTarget(float targetX)
+    {
+        if (facingRight == 1 && transform.position.x > targetX || facingRight == -1 && transform.position.x < targetX)
+        {
+            MobFlip();
+        }
+    }
     private void MobFlip()
     {
         facingRight *= -1;

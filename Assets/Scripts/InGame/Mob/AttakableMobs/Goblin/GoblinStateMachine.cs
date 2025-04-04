@@ -1,24 +1,27 @@
 using UnityEngine;
 
-[RequireComponent(typeof(HumonoidMobBase))]
+[RequireComponent(typeof(MeleeEnemies))]
 public class GoblinStateMachine : Enemies_StateMachine
 {
-    HumonoidMobBase humonoidMob;
+    AttackableNPCBase humonoidMob;
     [Header("State Templates")]
     public Mob_IdleState mob_IdleStateTemplate;
     public Mob_ChaseState mob_ChaseStateTemplate;
+    public Mob_AttackState mob_AttackStateTemplate;
 
-    [HideInInspector]public Mob_IdleState mob_IdleState;
-    [HideInInspector]public Mob_ChaseState mob_ChaseState;
+    [HideInInspector] public Mob_IdleState mob_IdleState;
+    [HideInInspector] public Mob_ChaseState mob_ChaseState;
+    [HideInInspector] public Mob_AttackState mob_AttackState;
 
 
     protected override void Awake()
     {
         base.Awake();
-        humonoidMob = mob as HumonoidMobBase;
+        humonoidMob = mob as AttackableNPCBase;
 
         InitFromSO(mob_IdleStateTemplate, out mob_IdleState);
         InitFromSO(mob_ChaseStateTemplate, out mob_ChaseState);
+        InitFromSO(mob_AttackStateTemplate, out mob_AttackState);
     }
     protected override void Start()
     {
@@ -40,6 +43,12 @@ public class GoblinStateMachine : Enemies_StateMachine
 
             case Mob_ChaseState:
                 if(!humonoidMob.IsEnemyInViewRange(mob_ChaseState.viewRange)) ChangeState(mob_IdleState);
+                else if(humonoidMob.IsEnemyInAttackRange(mob_AttackState.attackRadius)) ChangeState(mob_AttackState);
+            break;
+
+            case Mob_AttackState:
+                if(humonoidMob.IsEnemyInAttackRange(mob_AttackState.attackRadius)) mob_AttackState.Enter();
+                else ChangeState(mob_IdleState);
             break;
         }
     }

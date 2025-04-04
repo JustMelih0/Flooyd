@@ -13,11 +13,11 @@ public class Mob_IdleState : Enemies_State
 
     protected Coroutine lossCoroutine;
     protected Coroutine sleepCoroutine;
-    protected HumonoidMobBase humonoidMob;
+    protected AttackableNPCBase humonoidMob;
     public override void Initialize(StateMachine machine, Mob mob)
     {
         base.Initialize(machine, mob);
-        humonoidMob = mob as HumonoidMobBase;
+        humonoidMob = mob as AttackableNPCBase;
         startPos = mob.transform.position;
     }
     public override void Enter()

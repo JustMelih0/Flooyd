@@ -43,5 +43,17 @@ public abstract class StateMachine : MonoBehaviour
     {
         currentState?.GizmosDraw();
     }
+    public void OnAnimatonStarted()
+    {
+        currentState?.OnAnimationStarted();
+    }
+    public void OnAnimaton()
+    {
+        currentState?.OnAnimation();
+    }
+    public void OnAnimatonEnded()
+    {
+        currentState?.OnAnimationEnded();
+    }
 
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public abstract class HumonoidMobBase : Mob
+public abstract class AttackableNPCBase : Mob
 {
     public Transform attackPoint;
     public Transform viewPoint;
@@ -26,6 +26,10 @@ public abstract class HumonoidMobBase : Mob
     public virtual Collider2D IsEnemyInViewRange(float radius)
     {
         return CheckCircleArea(viewPoint.position, radius, targetLayer);
+    }
+    public virtual Collider2D IsEnemyInAttackRange(float radius)
+    {
+        return CheckCircleArea(attackPoint.position, radius, targetLayer);
     }
 
 

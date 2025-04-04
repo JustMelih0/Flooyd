@@ -4,7 +4,7 @@ using UnityEngine;
 public class Mob_ChaseState : Enemies_State
 {
 
-    protected HumonoidMobBase humonoidMob;
+    protected AttackableNPCBase humonoidMob;
     protected Collider2D targetObject;
 
     [SerializeField]protected float moveSpeed;
@@ -13,7 +13,7 @@ public class Mob_ChaseState : Enemies_State
     public override void Initialize(StateMachine machine, Mob mob)
     {
         base.Initialize(machine, mob);
-        humonoidMob = mob as HumonoidMobBase;
+        humonoidMob = mob as AttackableNPCBase;
     }
     public override void Enter()
     {
@@ -36,7 +36,7 @@ public class Mob_ChaseState : Enemies_State
 
     public override void Exit()
     {
-        
+        mob.animator.SetBool("isWalking", false);
     }
 
     public override void HandlePhysics()

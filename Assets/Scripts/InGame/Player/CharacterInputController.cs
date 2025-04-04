@@ -45,7 +45,7 @@ public class CharacterInputController : MonoBehaviour
     {
         if (context.started)
         {
-            //character.attackState.InputRequest(InputType.AttackInput, ClickType.started);
+            machine.character_AttackState.InputRequest(InputType.AttackInput, ClickType.started);
         }
         else if (context.canceled)
         {

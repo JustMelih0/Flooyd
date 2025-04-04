@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: e4127d7a00f2e284180bd912c97b4bfd
+guid: 261041aba98f7a943a53162bf86c535d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2217720857557074649
-    second: dyoattack_0
+      213: 6988724319902373649
+    second: igris_0
   - first:
-      213: -6283859472298081622
-    second: dyoattack_1
+      213: 5621267713615612514
+    second: igris_1
   - first:
-      213: 5202763987318665447
-    second: dyoattack_2
+      213: -8093442387262738336
+    second: igris_2
   - first:
-      213: -359327647686944543
-    second: dyoattack_3
+      213: 6384377354337260459
+    second: igris_3
   - first:
-      213: -6012618688614461168
-    second: dyoattack_4
+      213: -544980722510927909
+    second: igris_4
   - first:
-      213: -7529825353417395142
-    second: dyoattack_5
+      213: -7536087856909161682
+    second: igris_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,133 +115,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dyoattack_0
+      name: igris_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72df55a41a21931e0800000000000000
-      internalID: -2217720857557074649
+      spriteID: 1171ae8bdbfecf060800000000000000
+      internalID: 6988724319902373649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dyoattack_1
+      name: igris_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 0
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa2033f6a1f3bc8a0800000000000000
-      internalID: -6283859472298081622
+      spriteID: 26a4e69e331c20e40800000000000000
+      internalID: 5621267713615612514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dyoattack_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e0f252f74ee33840800000000000000
-      internalID: 5202763987318665447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dyoattack_3
+      name: igris_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e894a18869630bf0800000000000000
-      internalID: -359327647686944543
+      spriteID: 0607d1997015eaf80800000000000000
+      internalID: -8093442387262738336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dyoattack_4
+      name: igris_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 144
         y: 0
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 011924fa823ee8ca0800000000000000
-      internalID: -6012618688614461168
+      spriteID: ba3125db06dd99850800000000000000
+      internalID: 6384377354337260459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dyoattack_5
+      name: igris_4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 192
         y: 0
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3473dc5cbfa08790800000000000000
-      internalID: -7529825353417395142
+      spriteID: bd7ec499be6df68f0800000000000000
+      internalID: -544980722510927909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: igris_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.42, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b6bc4a5007a6790800000000000000
+      internalID: -7536087856909161682
       vertices: []
       indices: 
       edges: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a3c49e7296e6066498d56a413ef9efa6
+    spriteID: 0e93d7b73f5ddb04582e327bff833211
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dyoattack_0: -2217720857557074649
-      dyoattack_1: -6283859472298081622
-      dyoattack_2: 5202763987318665447
-      dyoattack_3: -359327647686944543
-      dyoattack_4: -6012618688614461168
-      dyoattack_5: -7529825353417395142
+      igris_0: 6988724319902373649
+      igris_1: 5621267713615612514
+      igris_2: -8093442387262738336
+      igris_3: 6384377354337260459
+      igris_4: -544980722510927909
+      igris_5: -7536087856909161682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
