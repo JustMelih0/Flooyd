@@ -14,6 +14,7 @@ public class Character_DashState : CharacterState
         machine.canTransitionState = false;
         canDash = false;
         character.characterHealth.canDodge = true;
+        AudioManager.Instance.PlaySFX("Dash", 0.9f, 1f);
         Instantiate(dashObject, character.transform.position, Quaternion.Euler(0, character.facingRight == 1 ? 0 : 180 , 0));
         character.rgb2D.AddForce(character.facingRight * dashForce * Vector2.right, ForceMode2D.Impulse);
         character.animator.SetTrigger("dashState");
@@ -53,7 +54,17 @@ public class Character_DashState : CharacterState
 
     public IEnumerator DashCooldown()
     {
-        yield return new WaitForSeconds(dashCooldown);
+        character.dashBarFiller.fillAmount = 1;
+        character.dashBarBorder.SetActive(true);
+        float elapsedTime = dashCooldown;
+        while (elapsedTime > 0)
+        {
+            elapsedTime -= Time.deltaTime;
+            character.dashBarFiller.fillAmount = elapsedTime / dashCooldown;
+            yield return null;
+        }
+        
+        character.dashBarBorder.SetActive(false);
         canDash = true;
     }
 

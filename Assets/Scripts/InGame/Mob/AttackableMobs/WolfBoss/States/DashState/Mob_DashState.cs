@@ -74,12 +74,12 @@ public class Mob_DashState : Enemies_State
     {
         yield return new WaitForSeconds(dashTime);
         dashCoroutine = null;
-        //isDashing = false;
         mob.animator.SetBool("dashEnd", true);
     }
     public override void OnAnimationStarted()
     {
         isDashing = true;
+        AudioManager.Instance.PlaySFX("Dash", 0.9f, 1f);
         dashCoroutine = mob.StartCoroutine(DashCoroutine());
     }
     public override void OnAnimation()

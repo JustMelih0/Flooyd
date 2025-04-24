@@ -10,6 +10,7 @@ public abstract class AttackableNPCBase : Mob
 
     public Rigidbody2D rgb2D {get; private set;}
     public BoxCollider2D boxCollider2D {get; private set;}
+    public Mob_Health mob_Health;
 
     protected override void Awake()
     {

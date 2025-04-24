@@ -6,7 +6,7 @@ public class IndicatorMob_Health : Mob_Health
 {
     [SerializeField] private Image healthBarFiller;  
     [SerializeField] private Image healthBarSmoother; 
-    [SerializeField] private GameObject healthBarBorder;
+    public Transform healthBarBorder;
 
     private Coroutine smootherCoroutine;
 
@@ -46,7 +46,5 @@ public class IndicatorMob_Health : Mob_Health
         }
 
         healthBarSmoother.fillAmount = targetHealth;
-
-        Debug.Log("b");
     }
 }

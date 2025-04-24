@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public abstract class Mob_Health : MonoBehaviour, IHitable
     protected Rigidbody2D rgb2d;
     protected SpriteRenderer spriteRenderer;
     [SerializeField]protected Mob mob;
+    public event Action mobDeadAction;
 
     protected virtual void Awake()
     {
@@ -45,12 +47,12 @@ public abstract class Mob_Health : MonoBehaviour, IHitable
     }
     public virtual void DamageImplemented(int damage, int direction)
     {
-
+        AudioManager.Instance.PlaySFX("Slash", 0.9f, 1f);
         rgb2d.AddForce(direction * Vector2.right, ForceMode2D.Impulse);
         impactCoroutine ??= StartCoroutine(ImpactEffect());
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, totalHealth);
-        if(currentHealth == 0 ) MobDead();
+        if(currentHealth == 0 && !mob.isDie) MobDead();
 
     }
     protected Coroutine impactCoroutine;
@@ -67,6 +69,7 @@ public abstract class Mob_Health : MonoBehaviour, IHitable
     protected virtual void MobDead()
     {
         mob.isDie = true;
+        mobDeadAction?.Invoke();
         //Destroy(gameObject);
     }
 }

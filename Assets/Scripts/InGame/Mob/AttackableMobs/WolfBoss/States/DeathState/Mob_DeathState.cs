@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DeathState", menuName = "StateMachines/GeneralStates/DeathState", order = 0)]
 public class Mob_DeathState : State
 {
-
+    [SerializeField]protected bool canDestroyObject = false;
     protected StateMachine machine;
     protected Mob mob;
     public override void Enter()
@@ -19,11 +19,10 @@ public class Mob_DeathState : State
     }
     public override void OnAnimationEnded()
     {
-        Destroy(machine.gameObject);
+        if(canDestroyObject) Destroy(machine.gameObject);
     }
     public override void Execute()
     {
-        
     }
 
     public override void Exit()

@@ -33,7 +33,7 @@ public class Character_LocomotionState : CharacterState
     public override void InputRequest(CharacterInputController.InputType inputType, CharacterInputController.ClickType clickType)
     {
         base.InputRequest(inputType, clickType);
-        if (inputType == CharacterInputController.InputType.JumpInput && character.IsGrounded())
+        if (inputType == CharacterInputController.InputType.JumpInput && character.IsGrounded() && !character.isDie)
         {
             character.rgb2D.linearVelocityY = jumpForce;
         }

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a852930d9b9354a9fd0c08d1342c6c, type: 3}
   m_Name: IgrisAttackState
   m_EditorClassIdentifier: 
+  damage: 1
   attackRadius: 1.3
+  attackCloseRadius: 1.1
   attackViewRadius: 4
   attackCoolDown: 0.5
   attackForce: 0

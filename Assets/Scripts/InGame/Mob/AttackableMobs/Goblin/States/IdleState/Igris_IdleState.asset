@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de1c0dc649638a45bfa8ac31b992948, type: 3}
   m_Name: Igris_IdleState
   m_EditorClassIdentifier: 
-  viewRange: 5
+  viewRange: 11
   lossTime: 0.5
   returnSpeed: 1.5
   sleepTime: 5
+  canSleep: 0

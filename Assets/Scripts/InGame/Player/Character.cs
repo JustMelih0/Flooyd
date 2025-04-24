@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CharacterHealth))]
@@ -13,6 +14,10 @@ public class Character : Mob
     public Transform attackPoint;
     [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask attackLayer;
+
+    [Header("For UI")]
+    public Image dashBarFiller;
+    public GameObject dashBarBorder;
 
     public Rigidbody2D rgb2D { get; private set; }
     public CharacterHealth characterHealth {get; private set;}

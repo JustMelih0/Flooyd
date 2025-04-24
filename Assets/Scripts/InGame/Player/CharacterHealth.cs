@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class CharacterHealth : Mob_Health
+public class CharacterHealth : IndicatorMob_Health
 {
     public event Action BlockedAttackAction;
     protected override void Awake()
@@ -16,7 +16,6 @@ public class CharacterHealth : Mob_Health
     public override void DamageDodged()
     {
         base.DamageDodged();
-        Debug.Log("dodge landı brom");
         BlockedAttackAction?.Invoke();
     }
     public override void DamageImplemented(int damage, int direction)

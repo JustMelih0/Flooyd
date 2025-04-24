@@ -16,4 +16,4 @@ MonoBehaviour:
   dashTime: 0.5
   dashAttackRadius: 1.5
   dashMainWievRadius: 7
-  dashDamage: 5
+  dashDamage: 3

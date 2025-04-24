@@ -33,20 +33,22 @@ public class WolfBossStateMachine : Enemies_StateMachine
     protected override void Start()
     {
         base.Start();
+        humonoidMob.mob_Health.mobDeadAction += ()=> AnyState(mob_DeathState);
         ChangeState(mob_IdleState);
+        
+    }
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        humonoidMob.mob_Health.mobDeadAction -= ()=> AnyState(mob_DeathState);
     }
 
-
+    
 
     public override void MachineProcess()
     {
         if(stopProcess) return;
 
-        if (mob.isDie)
-        {
-            stopProcess = true;
-            AnyState(mob_DeathState);
-        }
 
         switch (currentState)
         {
@@ -64,6 +66,10 @@ public class WolfBossStateMachine : Enemies_StateMachine
 
             case Mob_DashState:
                 MobDashStateControl();
+            break;
+
+            case Mob_DeathState:
+                stopProcess = true;
             break;
         }
     }
@@ -87,7 +93,7 @@ public class WolfBossStateMachine : Enemies_StateMachine
     {
         if(mob_ChaseState.chaseLimitDone) ChangeState(mob_DashAttackState);
         else if(!humonoidMob.IsEnemyInViewRange(mob_ChaseState.viewRange)) ChangeState(mob_IdleState);
-        else if(humonoidMob.IsEnemyInAttackRange(mob_AttackState.attackRadius)) ChangeState(mob_AttackState);
+        else if(humonoidMob.IsEnemyInAttackRange(mob_AttackState.attackCloseRadius)) ChangeState(mob_AttackState);
 
     }
 }

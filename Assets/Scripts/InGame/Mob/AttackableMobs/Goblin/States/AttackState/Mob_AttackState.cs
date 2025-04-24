@@ -6,6 +6,7 @@ public class Mob_AttackState : Enemies_State
 {
     public int damage = 1;
     public float attackRadius = 1f;
+    public float attackCloseRadius = 0.8f;
     public float attackViewRadius = 3f;
     public float attackCoolDown = 0.5f;
     public float attackForce = 5f;
@@ -67,7 +68,11 @@ public class Mob_AttackState : Enemies_State
 
     public override void Exit()
     {
-       
+        if(coolDownCoroutine != null)
+        {
+            mob.StopCoroutine(coolDownCoroutine);
+            coolDownCoroutine = null;
+        }
     }
 
     public override void HandlePhysics()
@@ -81,6 +86,8 @@ public class Mob_AttackState : Enemies_State
         Gizmos.DrawWireSphere(attackableNPC.attackPoint.position, attackRadius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(attackableNPC.viewPoint.position, attackViewRadius);
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(attackableNPC.attackPoint.position, attackCloseRadius);
     }
 
     protected IEnumerator AttackCoolDown()

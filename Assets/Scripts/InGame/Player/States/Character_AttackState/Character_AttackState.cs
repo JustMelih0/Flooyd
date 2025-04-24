@@ -37,6 +37,7 @@ public class Character_AttackState : CharacterState
 
     public override void OnAnimationStarted()
     {
+        AudioManager.Instance.PlaySFX("Swoosh", 0.9f, 1f);
         character.rgb2D.AddForce(character.facingRight * attackForce * Vector2.right, ForceMode2D.Impulse);
     }
 

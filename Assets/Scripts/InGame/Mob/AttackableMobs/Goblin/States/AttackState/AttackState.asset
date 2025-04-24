@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a852930d9b9354a9fd0c08d1342c6c, type: 3}
   m_Name: AttackState
   m_EditorClassIdentifier: 
+  damage: 1
   attackRadius: 0.5
+  attackCloseRadius: 0.2
   attackViewRadius: 4
   attackCoolDown: 0.5
   attackForce: 1
