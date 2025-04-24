@@ -64,7 +64,7 @@ public class CharacterInputController : MonoBehaviour
     {
         if (context.started)
         {
-            //character.blockState.InputRequest(InputType.BlockInput, ClickType.started);
+            machine.character_ParryState.InputRequest(InputType.BlockInput, ClickType.started);
         }
     }
     public void JumpInput(InputAction.CallbackContext context)

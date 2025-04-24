@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class StateMachine : MonoBehaviour
@@ -5,16 +6,34 @@ public abstract class StateMachine : MonoBehaviour
 
     [Header("Dont Assign Value")]public State currentState;
     public bool canTransitionState = true;
-
+    protected List<State> allStates = new();
 
     protected virtual void Awake()
     {
 
     }
     protected virtual void Start() {
-        
+        foreach (State item in allStates)
+        {
+            item.EnabledObject();
+        }
     }
-
+    protected virtual void OnEnable()
+    {
+    }
+    protected virtual void OnDisable()
+    {
+        foreach (State item in allStates)
+        {
+            item.DisabledObject();
+        }
+    }
+    protected void InitFromBase<T>(T stateTemplate, out T state, Mob mob) where T : State
+    {
+        state = (T)Instantiate(stateTemplate);
+        state.Initialize(this, mob);
+        allStates.Add(state);
+    }
     private void Update()
     {
         currentState?.Execute();

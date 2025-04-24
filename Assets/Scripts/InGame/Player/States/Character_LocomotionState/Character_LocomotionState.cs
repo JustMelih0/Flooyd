@@ -41,7 +41,9 @@ public class Character_LocomotionState : CharacterState
 
     public override void HandlePhysics()
     {
-        character.rgb2D.linearVelocity = new(horizontalInput * moveSpeed, character.rgb2D.linearVelocityY);
+        
+        if(horizontalInput != 0) character.rgb2D.linearVelocity = new(horizontalInput * moveSpeed, character.rgb2D.linearVelocityY);
+        else character.rgb2D.linearVelocity = new(character.rgb2D.linearVelocityX, character.rgb2D.linearVelocityY);
     }
     public override void Initialize(StateMachine machine, Mob character)
     {

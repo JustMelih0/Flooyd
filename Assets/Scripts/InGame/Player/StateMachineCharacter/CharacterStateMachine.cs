@@ -12,10 +12,12 @@ public class CharacterStateMachine : StateMachine
     public Character_LocomotionState character_LocomotionStateTemplate;
     public Character_DashState character_DashStateTemplate;
     public Character_AttackState character_AttackStateTemplate;
+    public Character_ParryState character_ParryStateTemplate;
 
     [HideInInspector] public Character_LocomotionState character_LocomotionState;
     [HideInInspector] public Character_DashState character_DashState;
     [HideInInspector] public Character_AttackState character_AttackState;
+    [HideInInspector] public Character_ParryState character_ParryState;
 
 
     protected override void Awake()
@@ -24,11 +26,13 @@ public class CharacterStateMachine : StateMachine
         InitFromSO(character_LocomotionStateTemplate, out character_LocomotionState);
         InitFromSO(character_DashStateTemplate, out character_DashState);
         InitFromSO(character_AttackStateTemplate, out character_AttackState);
+        InitFromSO(character_ParryStateTemplate, out character_ParryState);
     }
     protected void InitFromSO<T>(CharacterState stateTemplate, out T state) where T : CharacterState
     {
         state = (T)Instantiate(stateTemplate);
         state.Initialize(this, character);
+        allStates.Add(state);
     }
 
     protected override void Start()

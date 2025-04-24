@@ -1,8 +1,10 @@
+
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "newAttackState", menuName = "StateMachines/Character/AttackState", order = 0)]
 public class Character_AttackState : CharacterState
 {
+    public int damage = 1;
     public int attackIndex = 0;
     public float attackForce = 1f;
     private bool comboRequested = false; 
@@ -40,7 +42,14 @@ public class Character_AttackState : CharacterState
 
     public override void OnAnimation()
     {
-        Debug.Log("Hasar vuruldu");
+        Collider2D target = character.IsEnemyInAttackRange();
+        if(target == null) return;
+
+        if (target.TryGetComponent(out IHitable hitable))
+        {
+            CameraController.Instance.Shake();
+            hitable.TakeDamage(damage, character.facingRight, false);
+        }
     }
 
     public override void OnAnimationEnded()

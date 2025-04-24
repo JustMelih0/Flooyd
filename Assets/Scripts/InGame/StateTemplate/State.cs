@@ -4,6 +4,8 @@ public abstract class State : ScriptableObject
 {
 
     public virtual void Initialize(StateMachine machine, Mob mob){}
+    public virtual void EnabledObject(){}
+    public virtual void DisabledObject(){}
     public abstract void Enter();
     public abstract void Exit();
     public abstract void Execute();

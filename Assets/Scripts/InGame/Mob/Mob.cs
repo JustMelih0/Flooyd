@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public abstract class Mob : MonoBehaviour
 {
-    public float facingRight = 1;
+    public short facingRight = 1;
     public bool isDie = false;
 
     public Animator animator {get; private set;}

@@ -96,7 +96,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5714286
+  - time: 0.71428573
     functionName: OnAnimatonEnded
     data: 
     objectReferenceParameter: {fileID: 0}
