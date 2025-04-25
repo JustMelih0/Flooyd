@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7262f93a041e54a4aa16f11c1e547604, type: 3}
+  m_Name: Tryan_SwordThrowState
+  m_EditorClassIdentifier: 
+  projectileInstance: {fileID: 4842529321509577315, guid: af97c72146a05a84d94758853ff927f5, type: 3}
+  viewRadius: 20
+  attackRadius: 1
+  projectileSpeed: 18
+  damage: 1
+  attackForce: 1
+  farDistance: 4
+  projectileBehindOffset: 3.2

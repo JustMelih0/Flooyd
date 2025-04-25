@@ -404,16 +404,16 @@ GameObject:
   - component: {fileID: 172779491}
   - component: {fileID: 172779490}
   - component: {fileID: 172779489}
-  - component: {fileID: 172779488}
   - component: {fileID: 172779487}
-  - component: {fileID: 172779494}
+  - component: {fileID: 172779495}
+  - component: {fileID: 172779496}
   m_Layer: 8
-  m_Name: Igris
+  m_Name: TryanBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &172779487
 Animator:
   serializedVersion: 7
@@ -436,27 +436,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &172779488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172779486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a3adb1dac012745b44a754d1894f47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
-  canTransitionState: 1
-  mob: {fileID: 172779489}
-  mob_IdleStateTemplate: {fileID: 11400000, guid: f70b7e18ea25f4e478aa495f8e164127, type: 2}
-  mob_ChaseStateTemplate: {fileID: 11400000, guid: 426fe121fee64ff43b147036b8ffa4b7, type: 2}
-  mob_AttackStateTemplate: {fileID: 11400000, guid: 0c4782ab1bf2d544ca1e40a8da219112, type: 2}
-  mob_IdleState: {fileID: 0}
-  mob_ChaseState: {fileID: 0}
-  mob_AttackState: {fileID: 0}
 --- !u!114 &172779489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +455,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
-  mob_Health: {fileID: 0}
+  mob_Health: {fileID: 172779496}
 --- !u!61 &172779490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -593,8 +572,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 6988724319902373649, guid: 261041aba98f7a943a53162bf86c535d, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7494187279870299312, guid: 95ca21bc58c326b429579ef5d604f680, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -614,15 +593,16 @@ Transform:
   m_GameObject: {fileID: 172779486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.14, y: -3.259, z: 0}
+  m_LocalPosition: {x: 6.54, y: -3.259, z: 0}
   m_LocalScale: {x: 1.9, y: 1.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1477993110}
   - {fileID: 500464532}
+  - {fileID: 1982228546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &172779494
+--- !u!114 &172779495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -631,13 +611,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 172779486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f3556d00ce83d4ab5acdab116d37ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 881bc04d50d0a8549a2a79c9a1d4dca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 0}
+  canTransitionState: 1
+  mob: {fileID: 172779489}
+  mob_IdleStateTemplate: {fileID: 11400000, guid: f70b7e18ea25f4e478aa495f8e164127, type: 2}
+  mob_ChaseStateTemplate: {fileID: 11400000, guid: 426fe121fee64ff43b147036b8ffa4b7, type: 2}
+  mob_AttackStateTemplate: {fileID: 11400000, guid: 0c4782ab1bf2d544ca1e40a8da219112, type: 2}
+  mob_DeathStateTemplate: {fileID: 11400000, guid: 56dd09668166b884689b527ccc499806, type: 2}
+  mob_IdleState: {fileID: 0}
+  mob_ChaseState: {fileID: 0}
+  mob_AttackState: {fileID: 0}
+  mob_DeathState: {fileID: 0}
+  mob_TeleportAttackStateTemplate: {fileID: 11400000, guid: 16ba042131448a24fbacceacf581a8ae, type: 2}
+  mob_SwordThrowAndCatchStateTemplate: {fileID: 11400000, guid: cf9bdc69e9d38de49ac78f7a0ea536ca, type: 2}
+  mob_AttackState2Template: {fileID: 11400000, guid: 15f692ba0e36e66489375e0a3ec650ee, type: 2}
+  mob_TeleportAttackState: {fileID: 0}
+  mob_SwordThrowAndCatchState: {fileID: 0}
+  mob_AttackState2: {fileID: 0}
+--- !u!114 &172779496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172779486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f15827b1ef3acb45ad504039c42f561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealth: 20
   impactMaterial: {fileID: 2100000, guid: 925e7c527791e514fb72c62f31654423, type: 2}
   canDodge: 0
   mob: {fileID: 172779489}
+  healthBarFiller: {fileID: 1164958377}
+  healthBarSmoother: {fileID: 1046695521}
+  healthBarBorder: {fileID: 1982228546}
 --- !u!1 &193826146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,12 +1962,113 @@ Transform:
   m_GameObject: {fileID: 500464531}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.105, y: 0, z: 0}
+  m_LocalPosition: {x: -0.009, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 172779493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &514512127
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 172779493}
+    m_Modifications:
+    - target: {fileID: 91071672369300646, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222593831168723210, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+      propertyPath: m_text
+      value: 'Tryan: Lord Of The Absence'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,7 +2258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &560790181
 Animator:
   serializedVersion: 7
@@ -2352,13 +2465,13 @@ MonoBehaviour:
   mob_IdleStateTemplate: {fileID: 11400000, guid: f70b7e18ea25f4e478aa495f8e164127, type: 2}
   mob_ChaseStateTemplate: {fileID: 11400000, guid: ddf8543f198b76845a9dcfdc05a74fdb, type: 2}
   mob_AttackStateTemplate: {fileID: 11400000, guid: 9ddc517e187d5d548acf224213c8e46e, type: 2}
-  mob_DashAttackStateTemplate: {fileID: 11400000, guid: 5ca3e03efdb81e148b5a8b1bd8f8e9ca, type: 2}
   mob_DeathStateTemplate: {fileID: 11400000, guid: 56dd09668166b884689b527ccc499806, type: 2}
   mob_IdleState: {fileID: 0}
   mob_ChaseState: {fileID: 0}
   mob_AttackState: {fileID: 0}
-  mob_DashAttackState: {fileID: 0}
   mob_DeathState: {fileID: 0}
+  mob_DashAttackStateTemplate: {fileID: 11400000, guid: 5ca3e03efdb81e148b5a8b1bd8f8e9ca, type: 2}
+  mob_DashAttackState: {fileID: 0}
 --- !u!114 &560790189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3621,8 +3734,7 @@ MonoBehaviour:
   - {fileID: 638960913}
   - {fileID: 1133451517}
   BossHealth:
-  - {fileID: 560790189}
-  - {fileID: 1066820574}
+  - {fileID: 172779496}
   barsArea: {fileID: 848081329}
 --- !u!4 &1009978504
 Transform:
@@ -3729,6 +3841,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1046695521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6712659974795207336, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+  m_PrefabInstance: {fileID: 514512127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1055392014
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,7 +3905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1066820574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3858,13 +3981,13 @@ MonoBehaviour:
   mob_IdleStateTemplate: {fileID: 11400000, guid: f70b7e18ea25f4e478aa495f8e164127, type: 2}
   mob_ChaseStateTemplate: {fileID: 11400000, guid: ddf8543f198b76845a9dcfdc05a74fdb, type: 2}
   mob_AttackStateTemplate: {fileID: 11400000, guid: 9ddc517e187d5d548acf224213c8e46e, type: 2}
-  mob_DashAttackStateTemplate: {fileID: 11400000, guid: 5ca3e03efdb81e148b5a8b1bd8f8e9ca, type: 2}
   mob_DeathStateTemplate: {fileID: 11400000, guid: 56dd09668166b884689b527ccc499806, type: 2}
   mob_IdleState: {fileID: 0}
   mob_ChaseState: {fileID: 0}
   mob_AttackState: {fileID: 0}
-  mob_DashAttackState: {fileID: 0}
   mob_DeathState: {fileID: 0}
+  mob_DashAttackStateTemplate: {fileID: 11400000, guid: 5ca3e03efdb81e148b5a8b1bd8f8e9ca, type: 2}
+  mob_DashAttackState: {fileID: 0}
 --- !u!95 &1066820578
 Animator:
   serializedVersion: 7
@@ -4437,6 +4560,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1009978504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1164958377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7083592902153839211, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+  m_PrefabInstance: {fileID: 514512127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1171464101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,7 +5306,7 @@ Transform:
   m_GameObject: {fileID: 1477993109}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 0.138, z: 0}
+  m_LocalPosition: {x: 0.468, y: 0.095, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5291,9 +5425,11 @@ MonoBehaviour:
   mob_IdleStateTemplate: {fileID: 11400000, guid: 3fd724a1f851abe439b8322fbfe546d7, type: 2}
   mob_ChaseStateTemplate: {fileID: 11400000, guid: 59907c038feab2542a04827814da0250, type: 2}
   mob_AttackStateTemplate: {fileID: 11400000, guid: 9ddc517e187d5d548acf224213c8e46e, type: 2}
+  mob_DeathStateTemplate: {fileID: 0}
   mob_IdleState: {fileID: 0}
   mob_ChaseState: {fileID: 0}
   mob_AttackState: {fileID: 0}
+  mob_DeathState: {fileID: 0}
 --- !u!114 &1492248560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6492,6 +6628,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &1982228546 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4579110152769133321, guid: 5797d60eb445b8b4dac47446d149069b, type: 3}
+  m_PrefabInstance: {fileID: 514512127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2074932131
 GameObject:
   m_ObjectHideFlags: 0

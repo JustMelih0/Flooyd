@@ -32,6 +32,20 @@ public abstract class AttackableNPCBase : Mob
     {
         return CheckCircleArea(attackPoint.position, radius, targetLayer);
     }
+    public bool IsEnemyFarEnough(float farDistance, float viewRadius)
+    {
+        Collider2D enemy = IsEnemyInViewRange(viewRadius);
+        if (enemy == null)
+        {
+            return false;
+        }
+
+        if (Mathf.Abs(enemy.transform.position.x - transform.position.x) > farDistance)
+        {
+            return true;
+        }
+        return false;
+    }
 
 
 }

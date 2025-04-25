@@ -10,13 +10,15 @@ public class Mob_AttackState : Enemies_State
     public float attackViewRadius = 3f;
     public float attackCoolDown = 0.5f;
     public float attackForce = 5f;
+    public string animStateName = "attackState";
     Collider2D targetObject;
     AttackableNPCBase attackableNPC;
     protected Coroutine coolDownCoroutine;
 
     public override void Enter()
     {
-        mob.animator.SetTrigger("attackState");
+        mob.animator.SetTrigger(animStateName);
+        mob.animator.SetBool("attack", false);
         machine.canTransitionState = false;
         coolDownCoroutine = mob.StartCoroutine(AttackCoolDown());
     }
@@ -94,7 +96,7 @@ public class Mob_AttackState : Enemies_State
     {
         yield return new WaitForSeconds(attackCoolDown);
         coolDownCoroutine = null;
-        mob.animator.SetTrigger("attack");
+        mob.animator.SetBool("attack", true);
         
     }
 }

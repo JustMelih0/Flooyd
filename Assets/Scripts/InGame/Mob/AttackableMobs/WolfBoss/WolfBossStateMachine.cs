@@ -1,46 +1,22 @@
 using UnityEngine;
 
-public class WolfBossStateMachine : Enemies_StateMachine
+public class WolfBossStateMachine : GoblinStateMachine
 {
-    AttackableNPCBase humonoidMob;
-    [Header("State Templates")]
-    public Mob_IdleState mob_IdleStateTemplate;
-    public Mob_ChaseState mob_ChaseStateTemplate;
-    public Mob_AttackState mob_AttackStateTemplate;
     public Mob_DashState mob_DashAttackStateTemplate;
-    public Mob_DeathState mob_DeathStateTemplate;
 
-    [HideInInspector] public Mob_IdleState mob_IdleState;
-    [HideInInspector] public Mob_ChaseState mob_ChaseState;
-    [HideInInspector] public Mob_AttackState mob_AttackState;
     [HideInInspector] public Mob_DashState mob_DashAttackState;
-    [HideInInspector] public Mob_DeathState mob_DeathState;
+
 
 
 
     protected override void Awake()
     {
         base.Awake();
-        humonoidMob = mob as AttackableNPCBase;
-
-        InitFromSO(mob_IdleStateTemplate, out mob_IdleState);
-        InitFromSO(mob_ChaseStateTemplate, out mob_ChaseState);
-        InitFromSO(mob_AttackStateTemplate, out mob_AttackState);
         InitFromSO(mob_DashAttackStateTemplate, out mob_DashAttackState);
-        InitFromBase(mob_DeathStateTemplate, out mob_DeathState, mob);
-
     }
     protected override void Start()
     {
         base.Start();
-        humonoidMob.mob_Health.mobDeadAction += ()=> AnyState(mob_DeathState);
-        ChangeState(mob_IdleState);
-        
-    }
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-        humonoidMob.mob_Health.mobDeadAction -= ()=> AnyState(mob_DeathState);
     }
 
     

@@ -50,13 +50,13 @@ public abstract class StateMachine : MonoBehaviour
 
         currentState?.Exit();
         currentState = newState;
-        currentState.Enter();
+        currentState?.Enter();
     }
     public void AnyState(State newAnyState)
     {
-        currentState.Exit();
+        currentState?.Exit();
         currentState = newAnyState;
-        currentState.Enter();
+        currentState?.Enter();
     }
     void OnDrawGizmos()
     {
