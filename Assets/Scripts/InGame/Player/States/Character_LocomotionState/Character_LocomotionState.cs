@@ -37,6 +37,11 @@ public class Character_LocomotionState : CharacterState
         {
             character.rgb2D.linearVelocityY = jumpForce;
         }
+        if (inputType == CharacterInputController.InputType.HorizontalInput && machine.currentState != machine.character_LocomotionState)
+        {
+            machine.ChangeState(machine.character_LocomotionState);
+        }
+
     }
 
     public override void HandlePhysics()

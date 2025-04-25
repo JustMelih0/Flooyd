@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "newAttackState", menuName = "StateMachines/Character/AttackState", order = 0)]
@@ -7,14 +8,18 @@ public class Character_AttackState : CharacterState
     public int damage = 1;
     public int attackIndex = 0;
     public float attackForce = 1f;
-    private bool comboRequested = false; 
+    public float maxAttackCombo = 2; 
 
     public override void Enter()
     {
         machine.canTransitionState = false;
         character.rgb2D.linearVelocityX = 0;
-        attackIndex = 0;
-        comboRequested = false;
+
+        if (waitComboCoroutine != null)
+        {
+            character.StopCoroutine(waitComboCoroutine);
+        }
+
         character.animator.SetInteger("attackIndex", attackIndex);
         character.animator.SetTrigger("attackState");
     }
@@ -26,8 +31,14 @@ public class Character_AttackState : CharacterState
 
     public override void Exit()
     {
-        attackIndex = 0; 
-        comboRequested = false;
+        if(attackIndex == maxAttackCombo) attackIndex = 0;
+
+        if (waitAndChangeStateCoroutine != null)
+        {
+            character.StopCoroutine(waitAndChangeStateCoroutine);
+            waitAndChangeStateCoroutine = null;
+        }
+        waitComboCoroutine = character.StartCoroutine(WaitComboCoroutine());
     }
 
     public override void HandlePhysics()
@@ -55,19 +66,17 @@ public class Character_AttackState : CharacterState
 
     public override void OnAnimationEnded()
     {
-
-        if (comboRequested && attackIndex == 0)
-        {
-            character.rgb2D.linearVelocityX = 0;
-            attackIndex = 1;
-            character.animator.SetInteger("attackIndex", attackIndex);
-            comboRequested = false; 
-            return;
-        }
-
-        attackIndex = 0;
-        comboRequested = false;
+        character.rgb2D.linearVelocityX = 0;
+        attackIndex++;
         machine.canTransitionState = true;
+        waitAndChangeStateCoroutine = character.StartCoroutine(WaitAndChangeState());
+    }
+
+    protected Coroutine waitAndChangeStateCoroutine;
+    protected IEnumerator WaitAndChangeState()
+    {
+        yield return new WaitForSeconds(0.05f);
+        waitAndChangeStateCoroutine = null;
         machine.ChangeState(machine.character_LocomotionState);
     }
 
@@ -75,18 +84,14 @@ public class Character_AttackState : CharacterState
     {
         if (inputType == CharacterInputController.InputType.AttackInput)
         {
-            if (machine.currentState != machine.character_AttackState)
-            {
-                attackIndex = 0;
-                machine.ChangeState(machine.character_AttackState);
-            }
-            else
-            {
-                if (attackIndex == 0) 
-                {
-                    comboRequested = true;
-                }
-            }
+            machine.ChangeState(machine.character_AttackState);
         }
+    }
+    protected Coroutine waitComboCoroutine;
+    protected IEnumerator WaitComboCoroutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        waitComboCoroutine = null;
+        attackIndex = 0;
     }
 }

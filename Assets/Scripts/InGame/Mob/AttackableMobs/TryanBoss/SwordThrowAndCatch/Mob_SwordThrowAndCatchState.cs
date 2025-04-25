@@ -79,8 +79,7 @@ public class Mob_SwordThrowAndCatchState : Enemies_State
             Vector2 targetPos = humonoidMob.attackPoint.transform.position;
             targetPos.y = humonoidMob.attackPoint.position.y + 0.2f;
             projectile.InitializeProjectile(humonoidMob.gameObject, targetPos, projectileSpeed, damage);
-            throwProjectile = false;
-            
+            throwProjectile = false;  
         }
     }
 

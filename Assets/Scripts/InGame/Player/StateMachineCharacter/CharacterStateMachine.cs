@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Character))]
@@ -20,6 +21,8 @@ public class CharacterStateMachine : StateMachine
     [HideInInspector] public Character_AttackState character_AttackState;
     [HideInInspector] public Character_ParryState character_ParryState;
     [HideInInspector] public Mob_DeathState character_DeathState;
+
+    public event Action StateChangedEvent;
 
     protected override void Awake()
     {
@@ -68,12 +71,14 @@ public class CharacterStateMachine : StateMachine
         currentState?.Exit();
         currentState = newState;
         currentState.Enter();
+        StateChangedEvent?.Invoke();
     }
     public void AnyState(CharacterState newAnyState)
     {
         currentState.Exit();
         currentState = newAnyState;
         currentState.Enter();
+        StateChangedEvent?.Invoke();
     }
 
 

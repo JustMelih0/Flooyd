@@ -1382,6 +1382,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d3cb709b-7cbe-49c0-9a41-d9098e39ef1b
     m_ActionName: 'Player/Parry[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 328642442}
+        m_TargetAssemblyTypeName: CharacterInputController, Assembly-CSharp
+        m_MethodName: HorizontalInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a19128ce-2214-44ba-b264-64d5b72e50a5
+    m_ActionName: 'Player/HorizontalMovement[/Keyboard/a,/Keyboard/d]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
